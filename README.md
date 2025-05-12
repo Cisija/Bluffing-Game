@@ -135,8 +135,3 @@ Player 1 gets 4 points.
 
 This project was developed as part of a university course on Computer Science Fundamentals (CSF). Special thanks to the course instructors and peers for their guidance and support.
 
----
-
-## Contact
-
-For questions or feedback, please contact me via [email@example.com](mailto:email@example.com). You can also visit my [GitHub profile](https://github.com/yourusername) for more projects.
