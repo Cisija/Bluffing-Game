@@ -1,104 +1,142 @@
-# Spicy – A Two-Player Bluffing Card Game (C Implementation)
+# Entertaining Spice Pretending (ESP) - A Two-Player Card Game
 
-This project is a terminal-based implementation of a two-player bluffing card game inspired by the commercial card game **Spicy**. It was developed as part of the ESP (Einführung in die Systemnahe Programmierung) practicals at TU Graz, with the goal of applying basic system programming concepts in C.
-
-## 🎮 Game Concept
-
-Spicy is a game of bluffing and memory. Each player takes turns placing cards face-down, claiming a certain card and value. The opponent can either accept the move or challenge it. Successful bluffs are rewarded; failed ones are punished. The goal is to get rid of your hand before your opponent does — or to catch them in a lie.
-
-This version simplifies and adapts the original rules to a 1v1, console-based format.
-
-## ✨ Features
-
-- Terminal-based interface
-- Configurable deck setup via file input
-- Simple bluff mechanic with challenge options
-- Dynamic memory usage for decks and hands
-- Structured modular C code with header files
-
-## 🧠 Gameplay Overview
-
-Each player is dealt an equal number of cards from a shuffled deck. On their turn, a player:
-
-1. Chooses a card from their hand
-2. Declares a **color** and **value** (not necessarily truthfully)
-3. Plays the card face down
-
-The opponent then decides whether to:
-
-- **Accept** the play (no challenge)
-- **Challenge** the claimed color
-- **Challenge** the claimed value
-
-If the challenge is correct, the bluffing player is penalized. If the challenge fails, the challenger is penalized. Points are awarded for successful plays or successful challenges.
-
-## ⚙️ Compilation and Execution
-
-To compile the project, use a C compiler like `gcc`. Here's how to compile and run:
-
-```bash
-gcc -Wall -Werror -std=c99 -o spicy main.c game.c io.c card.c
-./spicy config.txt
-```
-
-The game reads its deck and initial setup from a configuration file.
-
-## 🗂️ Project Structure
-
-- `main.c` – Program entry point and game loop
-- `game.c/.h` – Core game logic and rule enforcement
-- `io.c/.h` – User input and output functions
-- `card.c/.h` – Data structures for cards and decks
-
-## 🧾 Config File Format
-
-The game expects a config file (`config.txt`) structured like this:
-
-```
-RED 3
-BLUE 5
-YELLOW 2
-```
-
-Each line represents a number of cards of a specific color. These are loaded into the draw pile.
-
-## 🎯 Game Commands
-
-During your turn, you'll be prompted to:
-
-- Choose a card from your hand
-- Enter a claimed color (e.g., `RED`, `BLUE`, `YELLOW`)
-- Enter a claimed value (integer)
-
-The opponent then chooses to:
-
-- `accept`
-- `challenge color`
-- `challenge value`
-
-The game continues until one player has no cards left.
-
-## 🧪 Sample Session
-
-```
-Player 1, your hand: [RED 5, BLUE 3, YELLOW 2]
-Choose card to play: 1
-Claim color: RED
-Claim value: 7
-
-Player 2, do you:
-1) Accept
-2) Challenge color
-3) Challenge value
-> 3
-```
-
-## 🔍 Notes & Future Work
-
-- Only supports two players locally; no network or AI opponent
-- Basic validation and error handling implemented
-- Future improvements could include card shuffling, a GUI, or multiplayer over sockets
+Welcome to **Entertaining Spice Pretending (ESP)**, a thrilling two-player card game inspired by the original card game [Spicy](<https://en.wikipedia.org/wiki/Spicy_(Kartenspiel)>). This project was implemented as part of a university assignment and demonstrates proficiency in memory management, file I/O, and linked data structures.
 
 ---
 
-Feel free to fork, clone, or modify this game for your own experiments in C!
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Learning Goals](#learning-goals)
+4. [How to Play](#how-to-play)
+5. [Technical Details](#technical-details)
+6. [Getting Started](#getting-started)
+7. [Example Output](#example-output)
+8. [Acknowledgements](#acknowledgements)
+
+---
+
+## Introduction
+
+The ESP card game is designed for two players and is loosely based on the mechanics of Spicy. Each player alternates turns, playing cards face down and deciding whether to tell the truth or bluff about the card's value and spice. The opponent can either believe the claim or challenge it, adding a strategic layer of deception and deduction.
+
+The game ends when all cards in the draw pile are played, and the player with the highest score wins.
+
+---
+
+## Features
+
+- **Dynamic Memory Management**: Cards are stored on the heap, ensuring efficient use of memory.
+- **Linked List Implementation**: Both player hands and the draw pile are represented as linked lists.
+- **File I/O**: Game configuration is loaded from a file, and results are appended to the same file.
+- **Robust Error Handling**: Handles invalid inputs, memory allocation failures, and file access issues gracefully.
+- **Command-Based Gameplay**: Players interact using text commands, allowing for a clear and structured game flow.
+- **Scoring System**: Tracks points earned through successful challenges and gameplay.
+
+---
+
+## Learning Goals
+
+This project was designed to enhance the following technical skills:
+
+- **Heap and Memory Management**: Efficiently allocate and deallocate memory to prevent leaks.
+- **File I/O**: Read and write configuration and result data to external files.
+- **Data Structures**: Implement linked lists to manage dynamic collections of cards.
+- **Structs and Enums**: Use structured data types to represent cards and game states.
+- **Dynamic Input Handling**: Manage user input of arbitrary length using `realloc`.
+
+---
+
+## How to Play
+
+1. **Setup**: The game begins by distributing cards to both players and initializing a draw pile.
+2. **Turn-Based Play**:
+   - A player plays a card from their hand, either truthfully or as a bluff.
+   - The opponent can either trust the play or issue a challenge.
+3. **Challenges**: Points are awarded based on the validity of the challenge.
+4. **Endgame**: The game concludes when the draw pile is empty, and the winner is determined based on total points.
+
+For detailed rules and commands, refer to the [Assignment Description](#).
+
+---
+
+## Technical Details
+
+- **Programming Language**: C
+- **Core Concepts**:
+  - Dynamic memory allocation (`malloc`, `realloc`, `free`)
+  - Linked list implementation
+  - File handling (`fopen`, `fwrite`, `fclose`)
+  - Error handling and program termination
+- **Code Structure**:
+  - `card_t`: Struct representing a card with `value` and `spice`.
+  - Linked lists for hand cards and the draw pile.
+  - Command-based input system with error validation.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- GCC or any compatible C compiler
+- A terminal or IDE with C support
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/entertaining-spice-pretending.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd entertaining-spice-pretending
+   ```
+3. Compile the program:
+   ```bash
+   gcc -o a4-csf a4-csf.c
+   ```
+
+### Usage
+
+Run the program with a configuration file:
+
+```bash
+./a4-csf configs/config_example.txt
+```
+
+---
+
+## Example Output
+
+```
+Welcome to Entertaining Spice Pretending!
+-------------------
+ROUND START
+-------------------
+Player 1:
+    latest played card:
+    cards played this round: 0
+    hand cards: 4_p 10_p 3_w 9_w 9_w 10_w
+P1 > play 3_w 3_w
+Player 2:
+    latest played card: 3_w
+    cards played this round: 1
+    hand cards: 5_c 5_c 7_c 7_p 6_w 10_w
+P2 > challenge value
+Challenge successful: 3_w's value does not match the real card 10_w.
+Player 1 gets 4 points.
+```
+
+---
+
+## Acknowledgements
+
+This project was developed as part of a university course on Computer Science Fundamentals (CSF). Special thanks to the course instructors and peers for their guidance and support.
+
+---
+
+## Contact
+
+For questions or feedback, please contact me via [email@example.com](mailto:email@example.com). You can also visit my [GitHub profile](https://github.com/yourusername) for more projects.
