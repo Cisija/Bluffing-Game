@@ -1,4 +1,4 @@
-# Entertaining Spice Pretending (ESP) - A Two-Player Card Game
+# Bluffing game - A Two-Player Card Game
 
 Welcome to **Entertaining Spice Pretending (ESP)**, a thrilling two-player card game inspired by the original card game Spicy. This project was implemented as part of a university assignment and demonstrates proficiency in memory management, file I/O, and linked data structures.
 
