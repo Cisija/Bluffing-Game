@@ -1,6 +1,6 @@
 # Entertaining Spice Pretending (ESP) - A Two-Player Card Game
 
-Welcome to **Entertaining Spice Pretending (ESP)**, a thrilling two-player card game inspired by the original card game [Spicy](<https://en.wikipedia.org/wiki/Spicy_(Kartenspiel)>). This project was implemented as part of a university assignment and demonstrates proficiency in memory management, file I/O, and linked data structures.
+Welcome to **Entertaining Spice Pretending (ESP)**, a thrilling two-player card game inspired by the original card game Spicy. This project was implemented as part of a university assignment and demonstrates proficiency in memory management, file I/O, and linked data structures.
 
 ---
 
@@ -57,7 +57,7 @@ This project was designed to enhance the following technical skills:
 3. **Challenges**: Points are awarded based on the validity of the challenge.
 4. **Endgame**: The game concludes when the draw pile is empty, and the winner is determined based on total points.
 
-For detailed rules and commands, refer to the [Assignment Description](#).
+For detailed rules and commands, refer to the Assignment Description.
 
 ---
 
@@ -87,15 +87,15 @@ For detailed rules and commands, refer to the [Assignment Description](#).
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/entertaining-spice-pretending.git
+   git clone https://github.com/yourusername/bluffing-game.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd entertaining-spice-pretending
+   cd bluffing-game
    ```
 3. Compile the program:
    ```bash
-   gcc -o a4-csf a4-csf.c
+   clang -o a4-csf a4-csf.c
    ```
 
 ### Usage
