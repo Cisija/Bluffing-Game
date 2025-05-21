@@ -19,7 +19,7 @@ Welcome to **Bluffing game**, a thrilling two-player card game inspired by the o
 
 ## Introduction
 
-The ESP card game is designed for two players and is loosely based on the mechanics of Spicy. Each player alternates turns, playing cards face down and deciding whether to tell the truth or bluff about the card's value and spice. The opponent can either believe the claim or challenge it, adding a strategic layer of deception and deduction.
+The card game is designed for two players and is loosely based on the mechanics of Spicy. Each player alternates turns, playing cards face down and deciding whether to tell the truth or bluff about the card's value and spice. The opponent can either believe the claim or challenge it, adding a strategic layer of deception and deduction.
 
 The game ends when all cards in the draw pile are played, and the player with the highest score wins.
 
